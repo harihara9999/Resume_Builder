@@ -1,0 +1,33 @@
+{%load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <form action="{%url 'logout'%}">
+            <button class="btn btn-danger">Logout</button>
+        </form>
+        <form action="{%url 'resume_list'%}">
+            <button class="btn btn-danger">Resume-list</button>
+        </form>
+        <form method="post">
+            <h1><center>Resume</center></h1>
+            {% csrf_token %}
+            {{form|crispy}}
+            <center><button type="submit" class="btn btn-primary">Submit</button></center>
+        </form>
+        {% if messages %}
+        {% for message in messages %}
+        <script>
+            alert("{{message}}")
+        </script>
+        {%endfor%}
+        {%endif%}
+    </div>
+</body>
+</html>
