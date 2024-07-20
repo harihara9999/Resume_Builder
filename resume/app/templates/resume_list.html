@@ -1,8 +1,48 @@
-<form method="post">
-    {%csrf_token%}
-    {{form}}
-    <button type="submit">Submit</button>
-    
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/litera/bootstrap.min.css":>
+    <style>
+        body {
+            background: linear-gradient(to right, #dcd8e0, #f2f89d);
+            font-family: 'Arial', sans-serif;
+        }
+         .container {
+            margin: auto;
+            width: 40%;
+            border: 3px solid rgba(244, 242, 242, 0.968);
+            padding: 35px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(96, 17, 17, 0.1);
+            text-align: center;
+            margin-top: 15%;
+        }
+        button {
+            background-color: #2575fc;
+            color: #fff;
+            border: 05px;
+            padding: 05px 15px;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 05px;
+        }
 
-</form>
+    </style>
+</head>
+<body>
+    <div class="container">
+
+      <form method="post">
+        {%csrf_token%}
+        {{form}}
+        <button type="submit">Submit</button>
+        
+        
+    
+    </form>
+    </div> 
+</body>
+</html>

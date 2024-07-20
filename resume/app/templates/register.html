@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/litera/bootstrap.min.css":>
+    <style>
+        body {
+            background: linear-gradient(to right, #dcd8e0, #f2f89d);
+        }
+        .container {
+            margin: auto;
+            width: 40%;
+            border: 2px solid black;
+            padding: 05px;
+            margin-top: 05%;
+        }
+        .button{
+            border-radius:4px;
+        }   
+    </style>
 </head>
 <body>
-    <div class="container">
-        <form method="post">
-            {%csrf_token%}
-            {{form}}
-            <center><button type="Submit" class="btn btn-primary"> Register</button></center>
-        </form>
-    </div>
+    <div class ="container">
+    <form method="post">
+        {%csrf_token%}
+        {{form}}
+        <br><button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
 </body>
 </html>

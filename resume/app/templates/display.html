@@ -4,25 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display Resume</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/3/cerulean/bootstrap.min.css">
 </head>
+<style>
+    body {
+        background: linear-gradient(to right, #dcd8e0, #f2f89d);
+        }
+        h1{
+            color:black;
+        }
+        h2{
+            color:black;
+        }
+        h3{
+            color:black;
+        }
+        p{
+            color:black;
+        }
+
+         .container {
+            margin: auto;
+            width: 80%;
+            border: 2px solid black;
+            padding: 35px;
+            background-color: white;
+            text-align: start;
+            margin-top: 05%;
+        }
+
+        
+
+</style>
 <body>
+    <form action="{% url 'download' id=id %}">
     <div class="container">
-        <center><h1>Resume</h1></center>
+        <h1><center>Resume</center></h1>
+        <br>
         <h2>Name : {{name}}</h2>
+        <br>
         <h2>Email : {{email}}</h2>
-        <hr>
+        <br>
         <h3>About: </h3>
         <p>{{about}}</p>
-        <hr>
-        <h3>College :{{college}}</h3>
-        <hr>
+        <br>
+        <h3>College : {{college}}</h3>
+        <br>
         <h3>Degree : {{degree}}</h3>
-        <hr>
+        <br>
         <h3>Project : </h3>
         <p>{{project}}</p>
-        <form action="{% url 'download' id=id %}">
-            <button type="submit" class="btn btn-primary" >Download Resume</button>
+    <form action="{% url 'download' id=id %}">
+            <br><button type="submit" class="btn btn-danger" >Download Resume</button>
         </form>
     </div>
 </body>

@@ -1,15 +1,54 @@
-<form method="post">
-    {%csrf_token%}
-    {{form}}
-    <button type="submit">Login</button>
-    {%if messages%}
-    {% for message in messages%}
-    <script>
-        alert("{{message}}")
-    </script>
-    {%endfor%}
-    {%endif%}
-</form>
-<form action="{% url 'register' %}">
-    <button type="submit" class="btn btn-primary">Sign up</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
+    <style>
+    body {
+        background: linear-gradient(to right, #dcd8e0, #f2f89d);
+    }
+    h1{
+        color: black;
+        text-align:center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-style: Verdana;
+        margin-top:09%
+    }
+        .container {
+            margin: auto;
+            width: 40%;
+            border: 2px groove black;
+            padding: 40px ;
+            text-align: center;
+            margin-top: 0.5%;
+        }
+        .button{
+            border-radius:6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>RESUME-BUILDER</h1>
+   
+    <div class="container">
+    
+    <form method="post"  >
+        {%csrf_token%}
+        {{form}}
+        <br><button type="submit" class="btn btn-primary">Login</button>
+        {%if messages%}
+        {% for message in messages%}
+        <script>
+            alert("{{message}}")
+        </script>
+        {%endfor%}
+        {%endif%}
+    </form>
+    <br><form action="{% url 'register' %}" >
+        <button type="submit" class="btn btn-primary">Sign up</button>
+    </form>
+</div>
+</body>
+</html>
